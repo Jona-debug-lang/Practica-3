@@ -19,7 +19,7 @@ router.get('/corrientes', (req, res) => {
 
     const corrientes = getCorrientes(from,to);
 
-    res.render('corrientes_elem', { 
+    res.render('corrientes', { 
         corrientes: corrientes 
     });
 });
