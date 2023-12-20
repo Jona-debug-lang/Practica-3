@@ -59,32 +59,3 @@ body {
     overflow-y: auto; /* Añade una barra de desplazamiento vertical si es necesario */
     width: 100%; /* Opcional: Ancho del textarea al 100% del contenedor */
 }
-
-.advertencia-box {
-    font-family: Arial, sans-serif;
-    background-color: #ffcccc;
-    border: 1px solid #ff3333;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: left;
-    display: visible; /* Inicialmente oculto */
-
-  }
-  
-  .advertencia-box h2 {
-    color: #ff3333;
-  }
-  
-  .advertencia-box p {
-    color: #ff6666;
-    margin-bottom: 15px;
-  }
-  
-  .advertencia-box ul {
-    padding: 0;
-    margin-left: 20px; /* Agregado para dar espacio a las viñetas */
-  }
-  
-  .advertencia-box li {
-    color: #ff6666;
-  }
