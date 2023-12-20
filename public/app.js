@@ -16,6 +16,8 @@ async function loadMore(){
     postsDiv.innerHTML += newPosts;
 
     loadMoreRequests++;
+
+    applyView(); //Acomoda los nuevos elementos cargados de acuerdo a la vista en la que se encuentra
 }
 
 function search() {
@@ -33,6 +35,35 @@ function search() {
             relatedPost.style.display = "none"; //None para ocultarlo
         } else {
             relatedPost.style.display = "block"; //Block para que se muestre como bloque
+        }
+    }
+}
+
+//Se obtienen los elementos que pertenezcan la clase post-item
+var elements = document.getElementsByClassName("post-item");
+var currentview = "grid"; //Se define el grid como vista predeterminada
+
+// Funcion para la vista en lista 
+function listView() {
+  currentview = "list";
+  applyView();
+}
+
+// Funcion para la vista en grid
+function gridView() {
+  currentview = "grid";
+  applyView();
+}
+
+//Función que acomoda los elementos de acuerdo a el botón elegido.
+function applyView(){
+    var i;
+    for (i=0; i<elements.length; i++){
+        if (currentview === "list"){
+            elements[i].style.width = "85%";
+        }
+        else if (currentview === "grid") {
+            elements[i].style.width = "30%";
         }
     }
 }
