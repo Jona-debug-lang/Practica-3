@@ -16,4 +16,4 @@ app.use(express.static(__dirname + '/../public'));
 
 app.use('/', router);
 
-app.listen(3003, () => console.log('Listening on port 3003!'));
+app.listen(3004, () => console.log('Listening on port 3003!'));
