@@ -18,6 +18,7 @@ async function loadMore(){
     loadMoreRequests++;
 
     applyView(); //Acomoda los nuevos elementos cargados de acuerdo a la vista en la que se encuentra
+    addEventListener();
 }
 
 function search() {
@@ -67,3 +68,26 @@ function applyView(){
         }
     }
 }
+
+// Llamamos a addEventListener cuando se carga la página inicialmente
+document.addEventListener("DOMContentLoaded", function () {
+    addEventListener();
+});
+
+//Función para el fade in fade out de hover para las imágenes de la página principal
+function addEventListener() {
+    // Selecciona todas las imágenes dentro de enlaces con la clase "post-link"
+    var images = document.querySelectorAll('.post-link img');
+
+    // Itera sobre las imágenes y agrega los eventos
+    images.forEach(function (image) {
+        image.addEventListener("mouseover", function () {
+            image.style.opacity = 1;
+        });
+
+        image.addEventListener("mouseout", function () {
+            image.style.opacity = 0.6;
+        });
+    });
+}
+  
