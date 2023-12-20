@@ -1,0 +1,90 @@
+@font-face {font-family: CR;src: url("/Fuentes/Cardo-Regular.ttf");}
+@font-face {font-family: CB;src: url("/Fuentes/Cardo-Bold.ttf");}
+
+body {
+    background-color: #FFFAFA;
+}
+
+.fondo{
+    height: auto;
+    max-height: 70%; 
+    width: auto;
+    max-width: 75%; 
+    float: left;
+    margin-left: 80px;
+}
+
+.galeria{
+    height: auto; 
+    width: 100%; 
+    opacity: 0.8;
+}
+
+.subtitlestn{
+    font-family: CB;
+    font-size:18px;
+    text-align:start;
+}
+
+.checkbox {
+    font-family: CR;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    text-align: left;
+}  
+
+.botona {
+    background-color: #ffffff; /* Color de fondo del botón */
+    color: #000; /* Color del texto del botón */
+    cursor: pointer; /* Cambia el cursor al puntero al pasar por encima */
+    transition: background-color 0.3s; /* Animación de cambio de color de fondo */
+    display: inline-block; /* Establece el botón como inline-block */
+    text-decoration: none;
+}
+
+.botona:hover {
+    background-color: #ffcdb6; /* Cambia el color de fondo al pasar el cursor por encima */
+    border-style: solid;
+}
+
+.d-flex {
+    justify-content: end;
+}
+
+/* Estilos para el textarea */
+#descripcion {
+    height: 150px; /* Altura del textarea */
+    resize: vertical; /* Permite redimensionar verticalmente */
+    overflow-y: auto; /* Añade una barra de desplazamiento vertical si es necesario */
+    width: 100%; /* Opcional: Ancho del textarea al 100% del contenedor */
+}
+
+.advertencia-box {
+    font-family: Arial, sans-serif;
+    background-color: #ffcccc;
+    border: 1px solid #ff3333;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    display: visible; /* Inicialmente oculto */
+
+  }
+  
+  .advertencia-box h2 {
+    color: #ff3333;
+  }
+  
+  .advertencia-box p {
+    color: #ff6666;
+    margin-bottom: 15px;
+  }
+  
+  .advertencia-box ul {
+    padding: 0;
+    margin-left: 20px; /* Agregado para dar espacio a las viñetas */
+  }
+  
+  .advertencia-box li {
+    color: #ff6666;
+  }

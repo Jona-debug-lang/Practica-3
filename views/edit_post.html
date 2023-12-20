@@ -1,0 +1,147 @@
+<html dir="ltr">
+
+	<!-- Configuración meta obligatoria -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Enlaces a estilos y Bootstrap-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+	<link integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+	<link type="text/css" rel="stylesheet" href="/css_nvo.css">
+
+
+    <!-- Título de la página -->
+    <title>Galeria de arte | Elemento nuevo</title>
+
+<body>
+	
+	<!-- Formulario para editar un post existente -->
+	<form action="/post/{{post.id}}/edit/edits" method="post">
+
+		<!-- Sección de la imagen de fondo -->
+		<div class="row">
+            <div class="col">
+                <!-- Imagen de fondo -->
+                <br><img src="/Img_principal/logo.jpg" class = "fondo" >
+            </div>
+        </div>
+
+		<div class="container text-center">
+
+			<!-- Sección para el nombre de la corriente -->
+			<div class="row">
+				<div class="col-md"><br>
+					<p class="subtitlestn">Nombre de la corriente: </p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+				  <div class="form-floating">
+					<input type="text" class="form-control" name="title" id="title" value="{{ post.title }}"><br><br>
+					<label for="title">Nombre de la corriente</label>
+				  </div>
+				</div>
+			</div>
+			
+			<!-- Sección para las fecha de inicio y finalización de la corriente -->
+			<div class="row">
+				<!-- Sección para la fecha de inicio de la corriente -->
+				<!--Año-->
+				<div class="col-md-3">
+                    <p class="subtitlestn">Fecha de inicio: </p>
+					<div class="form-floating">
+						<input type="number" class="form-control" id="date1" name="date1" value="{{ post.date1 }}" maxlength="4" oninput="this.value = this.value.slice(0, 4)">
+						<label for="date1">Año</label>
+					</div>
+                </div>
+
+				<!--Era-->
+				<div class="col-md-2">
+					<p class="subtitlestn">a. C. / d. C. </p>
+					<div class="form-floating">
+						<select class="form-control" id="edad1" name="edad1" required>
+							<option value="a. C." {% if post.edad1 == "a. C." %} selected {% endif %}>a. C.</option>
+							<option value="d. C." {% if post.edad1 == "d. C." %} selected {% endif %}>d. C.</option>
+						</select>
+						<label for="edad1">Era</label>
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<p>-</p>
+				</div>
+				
+				<!-- Sección para la fecha de finalización de la corriente -->
+				<!--Año-->
+				<div class="col-md-3">
+                    <p class="subtitlestn">Fecha de finalización: </p>
+					<div class="form-floating">
+						<input type="number" class="form-control" id="date2" name="date2" value="{{ post.date2 }}" maxlength="4" oninput="this.value = this.value.slice(0, 4)">
+						<label for="date2">Año</label>
+					</div>
+                </div>
+
+				<!--Era-->
+				<div class="col-md-2">
+                    <p class="subtitlestn">a. C. / d. C. </p>
+					<div class="form-floating">
+						<select class="form-control" id="edad2" name="edad2" required>
+							<option value="a. C." {% if post.edad2 == "a. C." %} selected {% endif %}>a. C.</option>
+							<option value="d. C." {% if post.edad2 == "d. C." %} selected {% endif %}>d. C.</option>
+						</select>
+						<label for="edad2">Era</label>
+					</div>
+				</div>
+				
+            </div><br><br>
+
+			<!-- Sección para la descripción de la corriente -->
+			<div class="row">
+                <div class = "col-md-6">
+                    <h1 class = "subtitlestn">Descripción:</h1>
+                </div>
+            </div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-floating">
+						<textarea class="form-control" name="descripcion" id="descripcion" required>{{ post.descripcion }}</textarea>
+						<label for="descripcion">Año</label>
+					</div><br><br>
+				</div>
+			</div>
+			
+			<!-- Sección para la URL de la imágen representativa de la corriente -->
+			<div class="row">
+                <div class = "col-md-6">
+                    <h1 class = "subtitlestn">URL:</h1>
+                </div>
+            </div>
+
+			<div class="row">
+				<div class = "col-md-10">
+					<div class = "form-floating">
+						<input type="text" class="form-control" name="image" id="imagen" value="{{ post.image }}">
+						<label for="imagen">URL</label>
+					</div>
+				</div>
+
+				<!--Botón de guardar-->
+				<div class="col-md-1">
+					<button class="input-group-text botona rounded" type="submit" value="Save">Guardar</button>
+				</div>
+
+				<!--Botón de regresar a inicio-->
+				<div class="col-md-1">
+					<button class="input-group-text botona rounded" href="/"> Regresar</button>
+				</div>
+				
+			</div>
+
+		
+		</div>
+	</form>
+
+</body>
+</html>

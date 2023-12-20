@@ -1,0 +1,111 @@
+@font-face {font-family: CR;src: url("/Fuentes/Cardo-Regular.ttf");}
+@font-face {font-family: CB;src: url("/Fuentes/Cardo-Bold.ttf");}
+
+body {
+    background-color: #FFF0D9 !important;
+}
+
+.img_prin{
+    max-width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    position: top;
+    opacity: 0.5;
+}
+
+.galeria{
+    height: auto; 
+    width: 100%; 
+    opacity: 0.8;
+}
+
+.title {
+    font-family: CB;
+    font-size:38px;
+    text-align:center;
+}
+
+.title2 {
+    font-family: CB;
+    font-size:30px;
+    text-align:center;
+}
+
+.subtitle{
+    font-family: CR;
+    font-size:22px;
+    text-align:center;
+}
+
+.subtitlest{
+    font-family: CR;
+    font-size:22px;
+    text-align:start;
+}
+
+.texto{
+    font-family: CR;
+    font-size:18px;
+    text-align:start
+}
+
+.botona {
+    background-color: #ffffff; /* Color de fondo del botón */
+    color: #000; /* Color del texto del botón */
+    cursor: pointer; /* Cambia el cursor al puntero al pasar por encima */
+    transition: background-color 0.3s; /* Animación de cambio de color de fondo */
+    display: inline-block; /* Establece el botón como inline-block */
+    text-decoration: none;
+}
+
+.botona:hover {
+    background-color: #ffcdb6; /* Cambia el color de fondo al pasar el cursor por encima */
+    border-style: solid;
+}
+
+.botonr {
+    background-color: #ffffff; /* Color de fondo del botón */
+    color: #000; /* Color del texto del botón */
+    cursor: pointer; /* Cambia el cursor al puntero al pasar por encima */
+    transition: background-color 0.3s; /* Animación de cambio de color de fondo */
+}
+
+.botonr:hover {
+    background-color: #ff5353; /* Cambia el color de fondo al pasar el cursor por encima */
+    border-style: solid;
+}
+
+.d-flex {
+    justify-content: end;
+}
+
+.input-group {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+/* Estilo para la fila que contiene las columnas */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Estilo para cada columna */
+  .post-item {
+    width: 30%; 
+    margin-bottom: 20px; 
+    padding: 15px; 
+    box-sizing: border-box; 
+  }
+  
+  /* Estilo para la imagen dentro de la columna */
+  .post-item img {
+    width: 100%; 
+    height: auto; 
+  }
+  
+  /* Estilo para los textos dentro de la columna */
+  .post-link p {
+    margin: 0;
+  }

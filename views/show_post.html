@@ -1,0 +1,163 @@
+<!-- Inicio del documento HTML -->
+<!doctype html>
+
+<html dir="ltr">
+
+    <!-- Configuración meta obligatoria -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Enlace al estilo CSS de Bootstrap y otros estilos personalizados -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <link integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css_detalle.css">
+    
+    <!-- Título de la página -->
+    <title>Galeria de arte | Página detalle</title>
+
+  <body>
+
+        <!-- Sección de la imagen superior de la página -->
+        <div class="row">
+            <!-- Imagen principal de la página -->
+            <img src="{{post.image}}" class = "img_prin" >
+        </div>
+
+        <!-- Botones de editar y eliminar al inicio de la página -->
+        <div class="container text-center">
+            <br>
+            <div class="row md-12 d-flex">
+                <div class="input-group">
+                    <a class="input-group-text botona rounded" type="button" href="/post/{{post.id}}/edit">Editar</a>
+                    &nbsp;&nbsp;
+                    <a class="input-group-text botona rounded" type="button" href="/post/{{post.id}}/delete" >Eliminar</a>
+                </div>
+            </div>
+
+            <!-- Primera sección de la página (Título, fechas y descripción de la época) -->
+            <div class ="row">
+                <div class ="col-md"><br><br>
+                    <p class="title">{{post.title}}</p><br>
+				    <p class ="subtitle">{{post.date1}} {{post.edad1}} - {{post.date2}} {{post.edad1}}</p><br>
+				    <p class ="texto">{{post.descripcion}}</p><br>
+                </div>
+            </div>
+            <!-- Segunda sección de la página presentación de subelementos -->
+            <div class="row">
+                <!--Bucle sobre el array de subelementos-->
+                {{#post.subelemento}}
+                    <div class="col-md-4 col-sm-12 post-item">
+                        <div class="post-link">
+                            <!--Enlace a la imágen de la obra-->
+                            {{#obra}}
+                                <img src="{{.}}" class="galeria">
+                            {{/obra}}
+                            <!--Título de la obra-->
+                            {{#titulo}}
+                                <p class="texto"><br>Título: {{.}}</p>
+                            {{/titulo}}
+                        </div>
+            
+                        <div class="post-link">
+                            <!--Artista de la obra-->
+                            {{#Creador}}
+                                <p class="texto">Creador: {{.}}</p>
+                            {{/Creador}}
+                            
+                            <!--Fecha de creación de la obra-->
+                            {{#Fecha_Creacion}}
+                                <p class="texto">Fecha de creación: {{.}}</p>
+                            {{/Fecha_Creacion}}
+                        </div>
+            
+                        <div class="post-link">
+                            <!--Técnica de la obra-->
+                            {{#tecnica}}
+                                <p class="texto">Técnica: {{.}}</p>
+                            {{/tecnica}}
+                        </div>
+                    </div>
+                {{/post.subelemento}}
+            </div>
+            <div class="row">
+                <!-- Título del formulario para agregar subelementos -->
+                <p class ="title2">¡Se parte de esta corriente artística y sube tu obra!</p>
+            </div>
+            <div class="container text-center">
+                <hr><br>
+                <form action = '/post/{{post.id}}/update' method="post">
+                    <div class = "row">
+                        <!-- Sección del formulario para título de la obra -->
+                        <div class="col-md-6">
+                            <div class="col-md">
+                                <p class="subtitlest">Título de la obra</p>
+                            </div>
+                            <div class = "form-floating">
+                                <input type="text" class="form-control" name="subelemento[titulo]" required>
+                                <label for="NombreObra">Ej. The Interrupted Sleep</label><br><br>
+                            </div>
+                        </div>
+                        <!-- Sección del formulario para creador de la obra -->
+                        <div class="col-md-6">
+                            <div class="col-md">
+                                <p class="subtitlest">Creador de la obra</p>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="subelemento[Creador]" required>
+                                <label for="Creadorobra">Ej. François Boucher</label> <br><br>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <!-- Sección del formulario para fecha de creación -->
+                            <div class="col-md-6">
+                                <div class="col-md">
+                                    <p class="subtitlest">Fecha de creación</p>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" name="subelemento[Fecha_Creacion]" maxlength="4" oninput="this.value = this.value.slice(0, 4)" max="2023" required>
+                                    <label for="Fecha_Creacion">Ej.2001</label>
+                                    <br> <br>
+                                </div>
+                            </div>
+            
+                            <!-- Sección del formulario para técnica de la obra -->
+                            <div class="col-md-6">
+                                <div class="col-md">
+                                    <p class="subtitlest">Técnica</p>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="subelemento[tecnica]" required>
+                                    <label for="tecnica">Ej. Óleo sobre lienzo</label> <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <h1 class="subtitlest">¡Sube tu obra!</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- Sección del formulario para subir obra -->
+                            <div class = "col-md-6">
+                                <div class = "flex-row">
+                                    <!-- Espacio para subir el url de la obra y botón para subir todo el formulario -->
+                                    <div class="input-group md-6">
+                                        <input type="text" class="form-control" name="subelemento[obra]" required >
+                                        <button class="input-group-text botona rounded" type="submit" value="Guardar">Guardar</button>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <!-- Botón para regresar a la página principal -->
+                            <div class="col-md-6 d-flex">
+                                <a class="input-group-text botona rounded" href="/" >Regresar a inicio</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>  
+        <br>
+    </body>
+</html>
