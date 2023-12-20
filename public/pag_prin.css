@@ -25,9 +25,8 @@ body {
 
 .rows{
     height: 300px;
-    width: auto;
+    width: 100%;
     border-radius: 10px;
-    max-width: 100%;
 }
 
 .fondo{
@@ -42,18 +41,28 @@ body {
 
 .row {
     display: flex;
-    justify-content: space-evenly;
-}
+    justify-content: space-around; /* o usa 'space-around' para espaciado uniforme */
+  }
   
   .post-item {
-    width: auto;
+    width: 30%; /* o ajusta según sea necesario */
     box-sizing: border-box; /* para incluir el padding y el borde en el ancho */
-    justify-content: space-evenly;
-}
+  }
   
   .post-link {
     display: flex;
     flex-direction: column; /* para colocar la imagen y los detalles en columnas */
     text-decoration: none; /* para quitar el subrayado del enlace */
   }
+
+#searchbar {
+    margin-left: 30px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+input[type=text] {
+     width: auto;
+     height: 20%;
+}
   
