@@ -112,6 +112,42 @@ input[type=text] {
     width: 100%; /* Opcional: Ancho del textarea al 100% del contenedor */
 }
 
-.custom-modal {
-    background-color: #FFFAFA !important; /* Cambia #abcdef al color que desees */
+/* Estilos para el fondo del contenido del modal */
+.modal-content {
+    background-color: #FFFAFA; /* Cambia esto al color de fondo que desees */
+    /* Otras propiedades de fondo, como imagen, gradiente, etc. */
+}
+
+.fondomodal{
+    height: auto;
+    max-height: 100%; 
+    width: auto;
+    max-width: 95%; 
+    opacity: 1;
+    float: left;
+    margin-left: 20px;
+}
+
+/* Estilos personalizados para el ancho del modal */
+.custom-modal .modal-content {
+    width: 100%;
+    margin: auto;
+}
+
+/* Estilos personalizados para el formulario en el modal */
+.custom-modal .modal-content .container {
+    margin: auto;
+    padding: 20px;
+}
+
+/* Estilos personalizados para el input en el modal */
+.custom-modal .modal-content .container .form-control {
+    width: 400px;
+}
+
+/* Estilos para el texto en el modal */
+.subtitlestnmodal {
+    font-family: CB;
+    font-size: 18px;
+    text-align: center;
 }

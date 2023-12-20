@@ -63,137 +63,40 @@
         </div><br><br>
     
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade custom-modal" id="exampleModal">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="post/new" method="post">
-                        <!-- Sección imágen de fondo-->
+                    <div class="row">
+                        <div class="col">
+                            <!-- Imagen de fondo -->
+                            <br><img src="/Img_principal/logo.jpg" class = "fondomodal">
+                        </div>
+                    </div>
+
+                    <!--Sección para el nombre de la corriente-->
+                    <div class="row">
+                        <div class="col-md">
+                            <br>
+                            <p class="subtitlestnmodal">Nombre de la corriente.</p>
+                        </div>
+                    </div>
+
+                    <div class="container d-flex align-items-center justify-content-center">
+                        <!-- Sección para el input -->
                         <div class="row">
-                            <div class="col">
-                                <!-- Imagen de fondo -->
-                                <br><img src="/Img_principal/logo.jpg" class = "fondo" >
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="title" id="title">
+                                </div>
                             </div>
                         </div>
-    
-                        <!-- Contenedor principal del formulario-->
-                        <div class="container text-center">
-    
-                            <!--Sección para el nombre de la corriente-->
-                            <div class="row">
-                                <div class="col-md"><br>
-                                    <p class="subtitlestn">Nombre de la corriente: </p>
-                                </div>
-                            </div>
-    
-                            <div class="row">
-                                <div class = "col-md-12">
-                                    <div class = "form-floating">
-                                        <input type="text" class="form-control" name='title' id="title"  ><br><br>
-                                        <label for="title">Nombre de la corriente</label>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <!--Sección para la fecha de inicio de la corriente-->
-                            <!--Año-->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <p class="subtitlestn">Fecha de inicio: </p>
-                                    <div class="form-floating">
-                                        <input type="number" class="form-control" id="date1" name="date1" maxlength="4" oninput="this.value = this.value.slice(0, 4)" max="2023" >
-                                        <label for="date1">Año</label>
-                                    </div>
-                                </div>
-    
-                                <!--Era-->
-                                <div class="col-md-2">
-                                    <p class="subtitlestn">a. C. / d. C. </p>
-                                    <div class="form-floating">
-                                        <select class="form-control" id="edad1" name="edad1" >
-                                        <option value="" selected disabled>Seleccione una era</option>
-                                        <option value="a. C.">a. C.</option>
-                                        <option value="d. D.">d. C.</option>
-                                        </select>
-                                        <label for="edad1">Era</label>
-                                    </div>
-                                </div>
-    
-                                <div class="col-md-2">
-                                    <p>-</p>
-                                </div>
-    
-                                <!--Sección para la fecha de finalización de la corriente-->
-                                <!--Año-->
-                                <div class="col-md-3">
-                                    <p class="subtitlestn">Fecha de finalización: </p>
-                                    <div class="form-floating">
-                                        <input type="number" class="form-control" id="date2" name="date2" maxlength="4" oninput="this.value = this.value.slice(0, 4)" max="2023" >
-                                        <label for="date2">Año</label>
-                                    </div>
-                                </div>
-                                <!--Era-->
-                                <div class="col-md-2">
-                                    <p class="subtitlestn">a. C. / d. C. </p>
-                                    <div class="form-floating">
-                                        <select class="form-control" id="edad2" name="edad2" >
-                                        <option value="" selected disabled>Seleccione una era</option>
-                                        <option value="a. C.">a. C.</option>
-                                        <option value="d. C.">d. C.</option>
-                                        </select>
-                                        <label for="edad2">Era</label>
-                                    </div>
-                                </div>
-                            </div><br><br>
-    
-    
-                            <!--Sección para la descripción de la corriente-->
-                            <div class="row">
-                                <div class = "col-md-6">
-                                    <h1 class = "subtitlestn">Descripción:</h1>
-                                </div>
-                            </div>
-    
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" name="descripcion" id="descripcion" ></textarea>
-                                        <label for="descripcion">Año</label>
-                                    </div><br>
-                                </div>
-                            </div>
-    
-                            <!--Sección para la URL de la imágen representativa de la corriente-->
-                            <div class="row">
-                                <div class = "col-md-6">
-                                    <h1 class = "subtitlestn">URL:</h1>
-                                </div>
-                            </div>
-    
-                            <div class="row">
-                                <div class = "col-md-8">
-                                    <div class = "form-floating">
-                                        <input type="text" class="form-control" name="image" id="image" >
-                                        <label for="imagen">URL</label>
-                                    </div>
-                                </div>
-                                
-                                <!--Botón de guardar-->
-                                <div class="col-md-2">
-                                    <button class="input-group-text botona rounded" type="submit" value="Save">Guardar</button>
-                                </div>
-                                
-                                <!--Botón de Regresar a inicio-->
-                                <div class="col-md-2">
-                                    <a class="input-group-text botona rounded" href="/" >Regresar a inicio</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+
                 </div>
             </div>
         </div>
-            
+      
+    
     </body>
     
 </html>
