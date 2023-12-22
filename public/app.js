@@ -61,7 +61,7 @@ function applyView(){
     var i;
     for (i=0; i<elements.length; i++){
         if (currentview === "list"){
-            elements[i].style.width = "85%";
+            elements[i].style.width = "51%";
         }
         else if (currentview === "grid") {
             elements[i].style.width = "30%";

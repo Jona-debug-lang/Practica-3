@@ -90,10 +90,95 @@
                             <div class="col-md">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" name="title" id="title">
+                                    <label for="title">Ej.</label>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="subtitlestn">Fecha de inicio: </p>
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="date1" name="date1" maxlength="4" oninput="this.value = this.value.slice(0, 4)" max="2023" >
+                                <label for="date1">Año</label>
+                            </div>
+                        </div>
+        
+                        <!--Era-->
+                        <div class="col-md-4">
+                            <p class="subtitlestn">a. C. / d. C. </p>
+                            <div class="form-floating">
+                                <select class="form-control" id="edad1" name="edad1" >
+                                  <option value="" selected disabled></option>
+                                  <option value="a. C.">a. C.</option>
+                                  <option value="d. D.">d. C.</option>
+                                </select>
+                                <label for="edad1">Era</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <br>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="subtitlestn">Fecha de finalización: </p>
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="date2" name="date2" maxlength="4" oninput="this.value = this.value.slice(0, 4)" max="2023" >
+                                <label for="date2">Año</label>
+                            </div>
+                        </div>
+        
+                        <!--Era-->
+                        <div class="col-md-4">
+                            <p class="subtitlestn">a. C. / d. C. </p>
+                            <div class="form-floating">
+                                <select class="form-control" id="edad2" name="edad2" >
+                                  <option value="" selected disabled></option>
+                                  <option value="a. C.">a. C.</option>
+                                  <option value="d. D.">d. C.</option>
+                                </select>
+                                <label for="edad2">Era</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <br>
+                    </div>
+
+                    <div class="row">
+                        <div class = "col-md-6">
+                            <p class = "subtitlestn">Descripción:</p>
+                        </div>
+
+                        <div class="col-md-11">
+                            <div class="form-floating">
+                                <textarea class="form-control" name="descripcion" id="descripcion" ></textarea>
+                                <label for="descripcion">Año</label>
+                            </div><br>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class = "col-md-10">
+                            <p class = "subtitlestn">URL:</p>
+                        </div>
+
+                        <div class = "col-md-10">
+                            <div class = "form-floating">
+                                <input type="text" class="form-control" name="image" id="image" >
+                                <label for="imagen">URL</label>
+                            </div>
+                    </div>
+                    <div>
+                        <br>
+                    </div>
+
+                    
                 </div>
             </div>
         </div>
