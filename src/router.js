@@ -12,6 +12,20 @@ router.get('/', (req, res) => {
     });
 });
 
+// Definición de una ruta POST para la creación de nuevos posts ('/post/new') utilizando Express Router
+router.post('/corriente', (req, res) => {
+    // Extracción de datos del cuerpo de la solicitud utilizando destructuring
+    const { title, date1, date2, edad1, edad2, descripcion, image, subelemento } = req.body;
+
+    // Procesar los datos del formulario y agregarlos al servicio de tableros
+    const postId = service.addPost({ title, date1, date2, edad1, edad2, descripcion, image, subelemento });
+
+    // Redirigir a la página de inicio (index) con un mensaje de éxito
+    res.redirect('/');
+});
+
+
+
 router.get('/corriente', (req, res) => { //Corriente es el HTML
 
     const from = parseInt(req.query.from);
