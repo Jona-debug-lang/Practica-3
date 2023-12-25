@@ -75,29 +75,29 @@
                             <br><img src="/Img_principal/logo.jpg" class = "fondomodal">
                         </div>
                     </div>
-
-                    <!--Sección para el nombre de la corriente-->
+                    
                     <div class="row">
-                        <div class="col-md">
-                            <br>
-                            <p class="subtitlestnmodal">Nombre de la corriente.</p>
+                        <div class="col-md-6">
+                            <br><br>
+                            <p class="subtitlestn">Nombre de la corriente.</p>
                         </div>
+        
+                        <!--Era-->
+                        <div class="col-md-4"></div>
                     </div>
 
-                    <div class="container d-flex align-items-center justify-content-center">
-                        <!-- Sección para el input -->
-                        <div class="row">
-                            <div class="col-md">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" name="title" id="title">
-                                    <label for="title">Ej.</label>
-                                </div>
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="title" id="title">
+                                <label for="title">Ej.</label>
                             </div>
                         </div>
-                    </div>
+                    </div>                    
 
                     <div class="row">
                         <div class="col-md-6">
+                            <br>
                             <p class="subtitlestn">Fecha de inicio: </p>
                             <div class="form-floating">
                                 <input type="number" class="form-control" id="date1" name="date1" maxlength="4" oninput="this.value = this.value.slice(0, 4)" max="2023" >
@@ -107,6 +107,7 @@
         
                         <!--Era-->
                         <div class="col-md-4">
+                            <br>
                             <p class="subtitlestn">a. C. / d. C. </p>
                             <div class="form-floating">
                                 <select class="form-control" id="edad1" name="edad1" >
@@ -151,10 +152,16 @@
                     </div>
 
                     <div class="row">
-                        <div class = "col-md-6">
-                            <p class = "subtitlestn">Descripción:</p>
+                        <div class="col-md-6">
+                            <br>
+                            <p class="subtitlestn">Descripción:</p>
                         </div>
+        
+                        <!--Era-->
+                        <div class="col-md-4"></div>
+                    </div>
 
+                    <div class="row">
                         <div class="col-md-11">
                             <div class="form-floating">
                                 <textarea class="form-control" name="descripcion" id="descripcion" ></textarea>
@@ -164,21 +171,31 @@
                     </div>
 
                     <div class="row">
-                        <div class = "col-md-10">
-                            <p class = "subtitlestn">URL:</p>
+                        <div class="col-md-6">
+                            <p class="subtitlestn">URL:</p>
                         </div>
-
-                        <div class = "col-md-10">
+        
+                        <!--Era-->
+                        <div class="col-md-4"></div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class = "col-md-11">
                             <div class = "form-floating">
                                 <input type="text" class="form-control" name="image" id="image" >
                                 <label for="imagen">URL</label>
                             </div>
+                        </div>
                     </div>
                     <div>
                         <br>
                     </div>
 
                     
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="guardarPostBtn">Guardar</button>
                 </div>
             </div>
         </div>

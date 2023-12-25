@@ -1,3 +1,4 @@
+
 @font-face {font-family: CR;src: url("/Fuentes/Cardo-Regular.ttf");}
 @font-face {font-family: CB;src: url("/Fuentes/Cardo-Bold.ttf");}
 
@@ -61,11 +62,6 @@ body {
     padding: 10px;
     border-radius: 10px;
 }
-
-input[type=text] {
-     width: auto;
-     height: 20%;
-}
   
 .galeria{
     height: auto; 
@@ -107,7 +103,7 @@ input[type=text] {
 
 /* Estilos para el textarea */
 #descripcion {
-    height: 150px; /* Altura del textarea */
+    height: 50px; /* Altura del textarea */
     resize: vertical; /* Permite redimensionar verticalmente */
     overflow-y: auto; /* Añade una barra de desplazamiento vertical si es necesario */
     width: 100%; /* Opcional: Ancho del textarea al 100% del contenedor */
