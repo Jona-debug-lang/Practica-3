@@ -3,14 +3,20 @@
 
 <html dir="ltr">
 
-    <!-- Configuración meta obligatoria -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+        <!-- Configuración meta obligatoria -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Enlace al estilo CSS de Bootstrap y otros estilos personalizados -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
-    <link integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css_detalle.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+        <link integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css_detalle.css">
+        <link type="text/css" rel="stylesheet" href="/pag_prin.css">
+
+        <script src="app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>   
+    </head>
     
     <!-- Título de la página -->
     <title>Galeria de arte | Página detalle</title>
@@ -28,11 +34,246 @@
             <br>
             <div class="row md-12 d-flex">
                 <div class="input-group">
-                    <a class="input-group-text botona rounded" type="button" href="/post/{{post.id}}/edit">Editar</a>
+                    <a class="input-group-text botona rounded" type="button" data-bs-toggle="modal" data-bs-target="#editarModal">Editar</a>
                     &nbsp;&nbsp;
                     <a class="input-group-text botona rounded" type="button" href="/post/{{post.id}}/delete" >Eliminar</a>
                 </div>
             </div>
+
+            <form action="/post/{{post.id}}/edit/edits" method="post">
+                <div class="modal fade custom-modal" id="editarModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="row">
+                                <div class="col">
+                                    <!-- Imagen de fondo -->
+                                    <br><img src="/Img_principal/logo.jpg" class="fondomodal">
+                                </div>
+                            </div>
+
+                            <!-- Espacio reservado para el mensaje de validación -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <br>
+                                    <div id="mensajeValidacion" style="background-color: #f44336; color: white; padding: 10px; margin-bottom: 10px; visibility: hidden;">
+                                        <!-- Agrega más texto o contenido aquí según tus necesidades -->
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="subtitlestn">Nombre de la corriente.</p>
+                                </div>
+                
+                                <!--Era-->
+                                <div class="col-md-4"></div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="title" id="title" value="{{ post.title }}">
+                                        <label for="title">Ej.</label>
+                                    </div>
+                                </div>
+                            </div>                    
+    
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <br>
+                                    <p class="subtitlestn">Fecha de inicio: </p>
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="date1" name="date1" value="{{ post.date1 }}" maxlength="4" oninput="this.value = this.value.slice(0, 4)" max="2023" >
+                                        <label for="date1">Año</label>
+                                    </div>
+                                </div>
+                
+                                <!--Era-->
+                                <div class="col-md-4">
+                                    <br>
+                                    <p class="subtitlestn">a. C. / d. C. </p>
+                                    <div class="form-floating">
+                                        <select class="form-control" id="edad1" name="edad1" required>
+                                            <option value="a. C." {% if post.edad1 == "a. C." %} selected {% endif %}>a. C.</option>
+                                            <option value="d. C." {% if post.edad1 == "d. C." %} selected {% endif %}>d. C.</option>
+                                        </select>
+                                        <label for="edad1">Era</label>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div>
+                                <br>
+                            </div>
+    
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="subtitlestn">Fecha de finalización: </p>
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="date2" name="date2" value="{{ post.date2 }}" maxlength="4" oninput="this.value = this.value.slice(0, 4)" max="2023" >
+                                        <label for="date2">Año</label>
+                                    </div>
+                                </div>
+                
+                                <!--Era-->
+                                <div class="col-md-4">
+                                    <p class="subtitlestn">a. C. / d. C. </p>
+                                    <div class="form-floating">
+                                        <select class="form-control" id="edad2" name="edad2" required>
+                                            <option value="a. C." {% if post.edad2 == "a. C." %} selected {% endif %}>a. C.</option>
+                                            <option value="d. C." {% if post.edad2 == "d. C." %} selected {% endif %}>d. C.</option>
+                                        </select>
+                                        <label for="edad2">Era</label>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div>
+                                <br>
+                            </div>
+    
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <br>
+                                    <p class="subtitlestn">Descripción:</p>
+                                </div>
+                
+                                <!--Era-->
+                                <div class="col-md-4"></div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" name="descripcion" id="descripcion" required>{{ post.descripcion }}</textarea>
+                                        <label for="descripcion">Año</label>
+                                    </div><br>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="subtitlestn">URL:</p>
+                                </div>
+                
+                                <!--Era-->
+                                <div class="col-md-4"></div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class = "col-md-11">
+                                    <div class = "form-floating">
+                                        <input type="text" class="form-control" name="image" id="image" value="{{ post.image }}">
+                                        <label for="imagen">URL</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br>
+                            </div>
+    
+                            <div class="modal-footer">
+                                <button type="button" class="btn botona" data-bs-dismiss="modal">Cancelar</button>
+                                <button class="input-group-text botona rounded" type="submit" value="Save">Guardar</button>
+    
+                            </div>
+                            
+                        </div>
+    
+                    </div>
+                </div>
+            </form>
+
+            <script>
+                // Función de validación para el campo de título
+                function validarTitulo() {
+                    var title = document.getElementById('title').value;
+        
+                    if (!/^[A-Z][a-z]*$/.test(title)) {
+                        mostrarMensaje('El campo título debe comenzar con una letra mayúscula.');
+                        return false;
+                    }
+        
+                    ocultarMensaje();
+                    return true;
+                }
+        
+                // Función de validación para el campo de fecha
+                function validarFecha() {
+                    var date1 = parseInt(document.getElementById('date1').value);
+                    var date2 = parseInt(document.getElementById('date2').value);
+        
+                    if (date1 > 2023 || date1 < 0 || date2 > 2023 || date2 < 0) {
+                        mostrarMensaje('Los años deben estar entre 0 y 2023.');
+                        return false;
+                    }
+        
+                    ocultarMensaje();
+                    return true;
+                }
+        
+                // Función de validación para el campo de descripción
+                function validarDescripcion() {
+                    var descripcion = document.getElementById('descripcion').value;
+        
+                    if (descripcion === '' || descripcion.length < 50 || descripcion.length > 500) {
+                        mostrarMensaje('La descripción debe contener entre 50 y 500 caracteres.');
+                        return false;
+                    }
+        
+                    ocultarMensaje();
+                    return true;
+                }
+        
+                // Función de validación para el campo de imagen
+                function validarImagen() {
+                    var image = document.getElementById('image').value;
+        
+                    // Validación de URL de imagen
+                    if (!esURLValida(image)) {
+                        mostrarMensaje('El campo URL de imagen no es una URL válida.');
+                        return false;
+                    }
+        
+                    ocultarMensaje();
+                    return true;
+                }
+        
+                // Función para validar si una URL es válida
+                function esURLValida(url) {
+                    var regex = /^(ftp|http|https):\/\/[^ "]+$/;
+                    return regex.test(url);
+                }
+        
+                // Función principal de validación
+                function validarFormulario() {
+                    // Llama a todas las funciones de validación
+                    return validarTitulo() && validarFecha() && validarDescripcion() && validarImagen();
+                }
+        
+                // Función para mostrar mensajes de validación
+                function mostrarMensaje(mensaje) {
+                    var mensajeDiv = document.getElementById('mensajeValidacion');
+                    mensajeDiv.innerHTML = mensaje;
+                    mensajeDiv.style.visibility = 'visible';
+                }
+    
+                // Función para ocultar el mensaje
+                function ocultarMensaje() {
+                    document.getElementById('mensajeValidacion').style.visibility = 'hidden';
+                }
+    
+                // Resto de tus funciones de validación
+                // ...
+    
+                // Agregar eventos oninput a todos los campos
+                document.getElementById('title').oninput = validarTitulo;
+                document.getElementById('date1').oninput = validarFecha;
+                document.getElementById('date2').oninput = validarFecha;
+                document.getElementById('descripcion').oninput = validarDescripcion;
+                document.getElementById('image').oninput = validarImagen;
+            </script>
 
             <!-- Primera sección de la página (Título, fechas y descripción de la época) -->
             <div class ="row">
@@ -159,5 +400,7 @@
             </div>
         </div>  
         <br>
+        
+        
     </body>
 </html>
