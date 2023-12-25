@@ -84,7 +84,7 @@ body {
 }  
 
 .botona {
-    background-color: #ffffff; /* Color de fondo del botón */
+    background-color: #ffe3d6; /* Color de fondo del botón */
     color: #000; /* Color del texto del botón */
     cursor: pointer; /* Cambia el cursor al puntero al pasar por encima */
     transition: background-color 0.3s; /* Animación de cambio de color de fondo */
@@ -93,7 +93,7 @@ body {
 }
 
 .botona:hover {
-    background-color: #ffcdb6; /* Cambia el color de fondo al pasar el cursor por encima */
+    background-color: #fdbda0; /* Cambia el color de fondo al pasar el cursor por encima */
     border-style: solid;
 }
 
