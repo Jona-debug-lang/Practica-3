@@ -90,4 +90,82 @@ function addEventListener() {
         });
     });
 }
-  
+
+
+// Función de validación para el campo de título
+function validarTitulo() {
+    var title = document.getElementById('title').value;
+
+    if (!/^[A-Z][a-z]*$/.test(title)) {
+        mostrarMensaje('El campo título debe comenzar con una letra mayúscula.');
+        return false;
+    }
+
+    ocultarMensaje();
+    return true;
+}
+
+// Función de validación para el campo de fecha
+function validarFecha() {
+    var date1 = parseInt(document.getElementById('date1').value);
+    var date2 = parseInt(document.getElementById('date2').value);
+
+    if (date1 > 2023 || date1 < 0 || date2 > 2023 || date2 < 0) {
+        mostrarMensaje('Los años deben estar entre 0 y 2023.');
+        return false;
+    }
+
+    ocultarMensaje();
+    return true;
+}
+
+// Función de validación para el campo de descripción
+function validarDescripcion() {
+    var descripcion = document.getElementById('descripcion').value;
+
+    if (descripcion === '' || descripcion.length < 50 || descripcion.length > 500) {
+        mostrarMensaje('La descripción debe contener entre 50 y 500 caracteres.');
+        return false;
+    }
+
+    ocultarMensaje();
+    return true;
+}
+
+// Función de validación para el campo de imagen
+function validarImagen() {
+    var image = document.getElementById('image').value;
+
+    // Validación de URL de imagen
+    if (!esURLValida(image)) {
+        mostrarMensaje('El campo URL de imagen no es una URL válida.');
+        return false;
+    }
+
+    ocultarMensaje();
+    return true;
+}
+
+// Función para validar si una URL es válida
+function esURLValida(url) {
+    var regex = /^(ftp|http|https):\/\/[^ "]+$/;
+    return regex.test(url);
+}
+
+// Función principal de validación
+function validarFormulario() {
+    // Llama a todas las funciones de validación
+    return validarTitulo() && validarFecha() && validarDescripcion() && validarImagen();
+}
+
+// Función para mostrar mensajes de validación
+function mostrarMensaje(mensaje) {
+    var mensajeDiv = document.getElementById('mensajeValidacion');
+    mensajeDiv.innerHTML = mensaje;
+    mensajeDiv.style.visibility = 'visible';
+}
+
+// Función para ocultar el mensaje
+function ocultarMensaje() {
+    document.getElementById('mensajeValidacion').style.visibility = 'hidden';
+}
