@@ -24,8 +24,6 @@ router.post('/corriente', (req, res) => {
     res.redirect('/');
 });
 
-
-
 router.get('/corriente', (req, res) => { //Corriente es el HTML
 
     const from = parseInt(req.query.from);
