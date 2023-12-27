@@ -70,9 +70,18 @@ function applyView(){
 }
 
 // Llamamos a addEventListener cuando se carga la página inicialmente
+// Llamamos a addEventListener cuando se carga la página inicialmente
 document.addEventListener("DOMContentLoaded", function () {
     addEventListener();
+
+    // Agregar eventos oninput a todos los campos
+    document.getElementById('title').oninput = validarTitulo;
+    document.getElementById('date1').oninput = validarFecha;
+    document.getElementById('date2').oninput = validarFecha;
+    document.getElementById('descripcion').oninput = validarDescripcion;
+    document.getElementById('image').oninput = validarImagen;
 });
+
 
 //Función para el fade in fade out de hover para las imágenes de la página principal
 function addEventListener() {
