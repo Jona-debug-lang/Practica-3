@@ -60,19 +60,13 @@ router.get('/post/:id/delete', (req, res) => {
     res.redirect('/');
 });
 
-// Definición de una ruta GET para mostrar el formulario de edición de un post específico utilizando Express Router
-router.get('/post/:id/edit', (req, res) => {
-    let post = service.getPost(req.params.id);
-    res.render('edit_post', { post });
-});
-
 // Definición de una ruta POST para procesar la edición de un post específico utilizando Express Router
 router.post('/post/:id/edit/edits', (req, res) => {
     let { image, title, date1, date2, edad1, edad2, descripcion, subelemento } = req.body;
     let id = req.params.id;
     let referer = req.get('referer');
     console.log('Referer:', referer);
-    let updatedReferer = referer.replace('/edit', '');
+    let updatedReferer = referer.replace('/update', '');
     let existingPost = service.getPost(id);
     existingPost.image = image;
     existingPost.title = title;

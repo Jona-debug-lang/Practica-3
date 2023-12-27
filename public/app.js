@@ -70,7 +70,6 @@ function applyView(){
 }
 
 // Llamamos a addEventListener cuando se carga la página inicialmente
-// Llamamos a addEventListener cuando se carga la página inicialmente
 document.addEventListener("DOMContentLoaded", function () {
     addEventListener();
 
