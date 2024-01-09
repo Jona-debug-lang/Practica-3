@@ -19,23 +19,29 @@ async function loadMore(){
 
     applyView(); //Acomoda los nuevos elementos cargados de acuerdo a la vista en la que se encuentra
     addEventListener();
+    search();
 }
 
-function search() {
-    let input = document.getElementById('searchbar').value //Obtiene la entrada del buscador
-    input = input.toLowerCase(); //Lo convierte en minúsculas
-    let x = document.getElementsByClassName('subtitle'); //Obtiene todos los elementos que tienen la clase subtitle
+async function search() {
+    let input = document.getElementById('searchbar').value.toLowerCase(); //Obtiene la entrada del buscador
     
-    //Inicia un bucle que itera sobre todos los elementos "subtitle"
-    for (i = 0; i < x.length; i++) { 
-        let current_title = x[i]; //Obtiene el elemento que se está iterando
-        let relatedPost = current_title.closest('.post-item'); //Encuentra el contenedor del elemento más cercano al título que se está iterando
+    const response = await fetch(`/search?searchbar=${input}`);
+    const responseObj = await response.json();
 
-        //Revisa si el texto del título no incluye el texto de la búsqueda
-        if (!current_title.innerHTML.toLowerCase().startsWith(input)) {
-            relatedPost.style.display = "none"; //None para ocultarlo
+    let available = responseObj.available;
+    let allPosts = document.getElementsByClassName('subtitle');
+
+
+    // Itera sobre los elementos 'subtitle'
+    for (let i = 0; i < allPosts.length; i++) {
+        let current_title = allPosts[i].textContent.toLowerCase(); // Obtiene el elemento que se está iterando
+        let relatedPost = allPosts[i].closest('.post-item'); // Encuentra el contenedor del elemento más cercano al título que se está iterando
+
+        // Revisa si el texto del título no incluye el texto de la búsqueda
+        if (!current_title.startsWith(input)) {
+            relatedPost.style.display = "none";
         } else {
-            relatedPost.style.display = "block"; //Block para que se muestre como bloque
+            relatedPost.style.display = "block";
         }
     }
 }

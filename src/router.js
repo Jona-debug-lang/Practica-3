@@ -77,4 +77,19 @@ router.post('/post/:id/edit/edits', (req, res) => {
     res.redirect(updatedReferer);
 });
 
+const posts = service.getPosts();
+let existingTitle = Array.from(posts.values()).map(post => post.title.toLowerCase());
+router.get('/search', (req, res) => {
+    let searchbar = req.query.searchbar.toLowerCase();
+
+    let availableTitle = existingTitle.includes(searchbar);
+
+    let response = {
+        available: availableTitle
+    }
+
+    res.json(response);
+});
+
+
 export default router;
