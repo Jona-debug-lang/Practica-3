@@ -105,6 +105,36 @@ function addEventListener() {
     });
 }
 
+// Nueva función para verificar si todos los campos están llenos
+function validarCamposLlenos() {
+    var campos = [
+        document.getElementById('title').value,
+        document.getElementById('date1').value,
+        document.getElementById('date2').value,
+        document.getElementById('descripcion').value,
+        document.getElementById('image').value,
+        document.getElementById('edad1').value,
+        document.getElementById('edad2').value
+    ];
+
+    var nombresCampos = ["Título", "Fecha de inicio", "Fecha de finalización", "Descripción", "URL de imagen", "Era de inicio", "Era de finalización"];
+    var camposVacios = [];
+
+    for (var i = 0; i < campos.length; i++) {
+        if (campos[i] === '') {
+            camposVacios.push(nombresCampos[i]);
+        }
+    }
+
+    if (camposVacios.length > 0) {
+        mostrarMensaje('Los siguientes campos deben estar llenos: ' + camposVacios.join(', ') + '.');
+        return false;
+    }
+
+    return true;
+}
+
+
 
 // Función de validación para el campo de título
 function validarTitulo() {
@@ -168,6 +198,11 @@ function esURLValida(url) {
 
 // Función principal de validación
 function validarFormulario() {
+    // Primero, verifica si todos los campos están llenos
+    if (!validarCamposLlenos()) {
+        return false;
+    }
+
     // Llama a todas las funciones de validación
     return validarTitulo() && validarFecha() && validarDescripcion() && validarImagen();
 }
