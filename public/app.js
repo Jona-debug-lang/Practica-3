@@ -134,8 +134,6 @@ function validarCamposLlenos() {
     return true;
 }
 
-
-
 // Función de validación para el campo de título
 function validarTitulo() {
     var title = document.getElementById('title').value;
